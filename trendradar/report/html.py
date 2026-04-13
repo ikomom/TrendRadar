@@ -65,7 +65,7 @@ def render_html_content(
             body {
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
                 margin: 0;
-                padding: 16px;
+                padding: 8px;
                 background: #fafafa;
                 color: #333;
                 line-height: 1.5;
@@ -83,7 +83,7 @@ def render_html_content(
             .header {
                 background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
                 color: white;
-                padding: 32px 24px;
+                padding: 20px 16px;
                 text-align: center;
                 position: relative;
                 overflow: hidden;
@@ -256,11 +256,11 @@ def render_html_content(
             }
 
             .content {
-                padding: 24px;
+                padding: 16px;
             }
 
             .word-group {
-                margin-bottom: 40px;
+                margin-bottom: 24px;
             }
 
             .word-group:first-child {
@@ -271,8 +271,8 @@ def render_html_content(
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                margin-bottom: 20px;
-                padding-bottom: 8px;
+                margin-bottom: 12px;
+                padding-bottom: 6px;
                 border-bottom: 1px solid #f0f0f0;
             }
 
@@ -303,8 +303,8 @@ def render_html_content(
             }
 
             .news-item {
-                margin-bottom: 20px;
-                padding: 16px 0;
+                margin-bottom: 12px;
+                padding: 12px 0;
                 border-bottom: 1px solid #f5f5f5;
                 position: relative;
                 display: flex;
@@ -455,8 +455,8 @@ def render_html_content(
 
             /* 通用区域分割线样式 */
             .section-divider {
-                margin-top: 32px;
-                padding-top: 24px;
+                margin-top: 20px;
+                padding-top: 16px;
                 border-top: 2px solid #e5e7eb;
             }
 
@@ -466,19 +466,19 @@ def render_html_content(
             }
 
             .new-section {
-                margin-top: 40px;
-                padding-top: 24px;
+                margin-top: 24px;
+                padding-top: 16px;
             }
 
             .new-section-title {
                 color: #1a1a1a;
                 font-size: 16px;
                 font-weight: 600;
-                margin: 0 0 20px 0;
+                margin: 0 0 12px 0;
             }
 
             .new-source-group {
-                margin-bottom: 24px;
+                margin-bottom: 16px;
             }
 
             .new-source-title {
@@ -574,8 +574,8 @@ def render_html_content(
             }
 
             .footer {
-                margin-top: 32px;
-                padding: 20px 24px;
+                margin-top: 20px;
+                padding: 16px;
                 background: #f8f9fa;
                 border-top: 1px solid #e5e7eb;
                 text-align: center;
@@ -605,10 +605,10 @@ def render_html_content(
             }
 
             @media (max-width: 480px) {
-                body { padding: 12px; }
-                .header { padding: 24px 20px; }
-                .content { padding: 20px; }
-                .footer { padding: 16px 20px; }
+                body { padding: 8px; }
+                .header { padding: 16px 12px; }
+                .content { padding: 12px; }
+                .footer { padding: 12px; }
                 .header-info { grid-template-columns: 1fr; gap: 12px; }
                 .news-header { gap: 6px; }
                 .news-content { padding-right: 45px; }
@@ -634,8 +634,8 @@ def render_html_content(
 
             /* RSS 订阅内容样式 */
             .rss-section {
-                margin-top: 32px;
-                padding-top: 24px;
+                margin-top: 20px;
+                padding-top: 16px;
             }
 
             .rss-section-header {
