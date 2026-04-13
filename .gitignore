@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Claude Code
+.claude/
+
+# TrendRadar 运行时数据
+output/
+!output/.gitkeep
+
+# 敏感配置
+docker/.env
+config/custom/
+
+# 个人配置（可选，根据需要调整）
+config/frequency_words.txt
+config/ai_interests.txt
+
+# 日志
+*.log
+
+# 临时文件
+*.tmp
+*.bak
+.cache/
+
+# 测试覆盖率
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 系统文件
+Thumbs.db
+desktop.ini
