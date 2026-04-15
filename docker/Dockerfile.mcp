@@ -2,19 +2,21 @@ FROM python:3.12-slim-bookworm
 
 WORKDIR /app
 
+ENV UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+
 # 从官方镜像拷贝 uv 二进制
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # 先安装依赖（利用 Docker 层缓存）
 COPY pyproject.toml uv.lock ./
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-install-project --no-dev
+    uv sync --frozen --no-install-project --no-dev
 
 # 复制 MCP 服务器代码和 trendradar 模块
 COPY mcp_server/ ./mcp_server/
 COPY trendradar/ ./trendradar/
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-dev
+    uv sync --frozen --no-dev
 
 ENV PATH="/app/.venv/bin:$PATH"
 

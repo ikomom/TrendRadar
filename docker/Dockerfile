@@ -5,8 +5,11 @@ WORKDIR /app
 # Latest releases available at https://github.com/aptible/supercronic/releases
 ARG TARGETARCH
 ENV SUPERCRONIC_VERSION=v0.2.39
+ENV UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
 RUN set -ex && \
+    sed -i 's|http://deb.debian.org/debian|https://mirrors.tuna.tsinghua.edu.cn/debian|g' /etc/apt/sources.list.d/debian.sources && \
+    sed -i 's|http://security.debian.org/debian-security|https://mirrors.tuna.tsinghua.edu.cn/debian-security|g' /etc/apt/sources.list.d/debian.sources && \
     apt-get update && \
     apt-get install -y --no-install-recommends curl ca-certificates && \
     case ${TARGETARCH} in \
@@ -56,13 +59,13 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 # 先安装依赖（利用 Docker 层缓存）
 COPY pyproject.toml uv.lock ./
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-install-project --no-dev
+    uv sync --frozen --no-install-project --no-dev
 
 # 再复制项目代码并安装项目本身
 COPY docker/manage.py .
 COPY trendradar/ ./trendradar/
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-dev
+    uv sync --frozen --no-dev
 
 ENV PATH="/app/.venv/bin:$PATH"
 
